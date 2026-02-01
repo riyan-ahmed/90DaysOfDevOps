@@ -29,4 +29,4 @@
 - `wget url` - Download files from internet.
 - `whois domain` - Displays whois information for domain.
 - `host domain` - Displays DNS IP address for domain.
-
+- `nslookup domain` - Display IP address of domain.
