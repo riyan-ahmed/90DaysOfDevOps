@@ -69,8 +69,6 @@ Create `system_info.sh` that uses functions for everything:
    
    ![snapshot](images/system_info.png)
 
-Output should look clean and readable.
-
 ---
 
 

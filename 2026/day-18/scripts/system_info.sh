@@ -30,8 +30,11 @@ cpu_consuming_processes(){
 	ps -eo pid,user,comm,%cpu,%mem --sort=-%cpu | head -n 6
 }
 
-sys_info
-sys_uptime
-disk_usage
-mem_usage
-cpu_consuming_processes
+main(){
+	sys_info
+	sys_uptime
+	disk_usage
+	mem_usage
+	cpu_consuming_processes
+}
+main

@@ -10,5 +10,8 @@ check_memory(){
 	free -h | awk 'NR==2{print $7}'
 }
 
-check_disk
-check_memory
+main(){
+	check_disk
+	check_memory
+}
+main
