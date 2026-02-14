@@ -16,8 +16,8 @@
 
 3. Comments — single line (`#`) and inline
 
-#this is comment
-echo "hi"; #this is inline comment
+* #this is comment
+* echo "hi"; #this is inline comment
 
 4. Variables — declaring, using, and quoting (`$VAR`, `"$VAR"`, `'$VAR'`)
 
