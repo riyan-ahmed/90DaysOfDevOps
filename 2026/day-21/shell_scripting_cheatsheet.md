@@ -8,11 +8,17 @@
 | Argument | `$1`, `$2` | `./script.sh arg1` |
 | If | `if [ condition ]; then` | `if [ -f file ]; then` |
 | For loop | `for i in list; do` | `for i in 1 2 3; do` |
+| Until | `until [ condition ] do .. done` | `until [ $i -eq 5 ] do echo $i ((i++)) done` |
 | Function | `name() { ... }` | `greet() { echo "Hi"; }` |
 | Grep | `grep pattern file` | `grep -i "error" log.txt` |
 | Awk | `awk '{print $1}' file` | `awk -F: '{print $1}' /etc/passwd` |
 | Sed | `sed 's/old/new/g' file` | `sed -i 's/foo/bar/g' config.txt` |
-| Variable | `VAR="value"` | `NAME="DevOps"` |
+| Case | `case variable in a);; b);; *);; esac` | `case $num in a);; b);; *);; esac` |
+| Sort | `sort file` | `sort -n log.txt` |
+| Tr | `tr option [set1] [set2] < file` | `tr [a-z] [A-Z] < file` |
+| Wc | `wc option file` | `wc -wcl log.txt` |
+| Head | `head -n file` | `head -10 log.txt` |
+| Tail | `tail -n file` | `tail -10 log.txt` |
 
 --- 
 
