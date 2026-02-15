@@ -15,7 +15,7 @@
 3. Check the status — read and understand what Git is telling you
 4. Explore the hidden `.git/` directory — look at what's inside
 
-   ![snapshot](images/repo.png)
+   ![snapshot](images/git_repo.png)
 
 ---
 
@@ -44,7 +44,7 @@
 
 1. What is the difference between `git add` and `git commit`?
 * `git add`- keeps file in staging area. So it can be included in next commit.
- `git commit` - Commits staged changes into the repository history with a message. Creates a new commit with commit id.
+* `git commit` - Commits staged changes into the repository history with a message. Creates a new commit with commit id.
  
 2. What does the **staging area** do? Why doesn't Git just commit directly?
 * Staging area stores files/changes that need to be added in next commit. 
