@@ -46,7 +46,7 @@ perfectly. That is why we use branches, experiment on other branches first then 
 5. Verify both branches are visible on GitHub
 6. Answer in your notes: What is the difference between `origin` and `upstream`?
   * `Origin` -  Points to your remote repository.
-   `Upstream` - Points to the repository you forked from.
+  * `Upstream` - Points to the repository you forked from.
     - If not forked then no need of upstream.
     
    ![snapshot](images/github.png)
