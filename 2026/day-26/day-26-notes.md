@@ -7,7 +7,7 @@
 4. Answer in your notes: What authentication methods does `gh` support?
  - Web browser or personal access token
  
-    ![snapshot](iamges/auth_status.jpeg)
+    ![snapshot](images/auth_status.jpeg)
 
 ---
 
@@ -19,11 +19,11 @@
 5. Open a repo in your browser directly from the terminal
 6. Delete the test repo you created (be careful!)
 
-    ![snapshot](iamges/repo_create.jpeg)
+    ![snapshot](images/repo_create.jpeg)
 
-    ![snapshot](iamges/repo_list.jpeg)
+    ![snapshot](images/repo_list.jpeg)
     
-    ![snapshot](iamges/repo_delete.jpeg)
+    ![snapshot](images/repo_delete.jpeg)
     
 ---
 
@@ -38,9 +38,9 @@
     - gh issue comment <issue num>
     - gh issue close <issue num>
 
-    ![snapshot](iamges/issue_create.jpeg)
+    ![snapshot](images/issue_create.jpeg)
     
-    ![snapshot](iamges/issue_close.jpeg)
+    ![snapshot](images/issue_close.jpeg)
     
 ---
 
@@ -50,7 +50,7 @@
 3. View the details of your PR — check its status, reviewers, and checks
 4. Merge your PR from the terminal
 
-    ![snapshot](iamges/pr.jpeg)
+    ![snapshot](images/pr.jpeg)
     
 5. Answer in your notes:
    - What merge methods does `gh pr merge` support?
@@ -70,6 +70,6 @@
    * They allow you to automate workflows without interactive sessions, making it easy to trigger, monitor, 
      and manage GitHub Actions directly from scripts or automation tools.
 
-    ![snapshot](iamges/workflow.jpeg)
+    ![snapshot](images/workflow.jpeg)
     
 ---
