@@ -4,8 +4,9 @@
 1. Install the GitHub CLI on your machine
 2. Authenticate with your GitHub account
 3. Verify you're logged in and check which account is active
+
 4. Answer in your notes: What authentication methods does `gh` support?
- - Web browser or personal access token
+    - Web browser or personal access token
  
     ![snapshot](images/auth_status.png)
 
@@ -32,11 +33,12 @@
 2. List all open issues on that repo
 3. View a specific issue by its number
 4. Close an issue from the terminal
+
 5. Answer in your notes: How could you use `gh issue` in a script or automation?
-  * By combining gh issue commands in a script, you can automate workflows such as:
-    - gh issue list
-    - gh issue comment <issue num>
-    - gh issue close <issue num>
+    * By combining gh issue commands in a script, you can automate workflows such as:
+      - gh issue list
+      - gh issue comment <issue num>
+      - gh issue close <issue num>
 
     ![snapshot](images/issue_create.png)
     
@@ -54,20 +56,21 @@
     
 5. Answer in your notes:
    - What merge methods does `gh pr merge` support?
-    * merge commit
-    * rebase merge
-    * squash merge
+      * merge commit
+      * rebase merge
+      * squash merge
    - How would you review someone else's PR using `gh`?
-    * `gh pr view --web`
-    * `gh pr review <pr-num> --approve`
+      * `gh pr view --web`
+      * `gh pr review <pr-num> --approve`
 
 ---
 
 ## Task 5: GitHub Actions & Workflows (Preview)
 1. List the workflow runs on any public repo that uses GitHub Actions
 2. View the status of a specific workflow run
+
 3. Answer in your notes: How could `gh run` and `gh workflow` be useful in a CI/CD pipeline?
-   * They allow you to automate workflows without interactive sessions, making it easy to trigger, monitor, 
+    * They allow you to automate workflows without interactive sessions, making it easy to trigger, monitor, 
      and manage GitHub Actions directly from scripts or automation tools.
 
     ![snapshot](images/workflow.png)
