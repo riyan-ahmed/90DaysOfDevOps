@@ -65,31 +65,46 @@ specified
 ---
 
 ## Task 4: Branching Strategies
-Research the following branching strategies and document each in your notes with:
-- How it works (short description)
-- A simple diagram or flow (text-based is fine)
-- When/where it's used
-- Pros and cons
 
-1. **GitFlow** — develop, feature, release, hotfix branches
-2. **GitHub Flow** — simple, single main branch + feature branches
+1. **GitFlow** — 
+   - **master** : Always reflects the production‑ready state.
+   - **develop** : Always reflects a state with the latest delivered development changes for the next release.
+   - **release** : Created from develop when the desired release state is met and assigned a release number. 
+       Minor fixes can be made here. Eventually merged into both master and develop.
+   - **feature** : Created from develop for new feature development. Merged back into develop once complete.
+   - **hotfix** : Created from master to fix urgent bugs. Changes are merged back into both master and develop.
+
+   - Used for a large team with scheduled releases.
+   - Pros : Everything perfectly tracked.
+   - Cons : Can be complex and difficult to manage.
+
+    ![snapshot](gitflow.jpeg)
+
+2. **GitHub Flow** — 
+   - **main** : Production ready state.
+   - **feature branches** : Created from main. Develop and test the feature, submit for review, approve, 
+       and merge back into   main.
+   - Ideal for continuous deployment/continuous delivery (CD) workflows.
+   - Pros : Simple, lightweight.
+   - Cons : Not properly structured. Can become messy if not disciplined, since everything merges directly into main. 
+   
 3. **Trunk-Based Development** — everyone commits to main, short-lived branches
+   - **trunk/main** : The single branch where all developers commits frequently. Always reflects the latest working state.
+   - **short lived feature branches** : Short lived branches created for a change, merged back quickly.
+   - Ideal for startup.
+   - Pros : Simple, fast.
+   - Cons : Risky if anyone pushed unstable code directly to trunk.
+
 4. Answer:
    - Which strategy would you use for a startup shipping fast?
+     * Trunk
+     
    - Which strategy would you use for a large team with scheduled releases?
+     * Git Flow
+     
    - Which one does your favorite open-source project use? (check any repo on GitHub)
+     * Trunk Based
 
 ---
 
-### Task 5: Git Commands Reference Update
-Update your `git-commands.md` to cover everything from Days 22–25:
-- Setup & Config
-- Basic Workflow (add, commit, status, log, diff)
-- Branching (branch, checkout, switch)
-- Remote (push, pull, fetch, clone, fork)
-- Merging & Rebasing
-- Stash & Cherry Pick
-- Reset & Revert
-
----
 
