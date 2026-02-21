@@ -40,7 +40,7 @@ Go through the checklist below. For each item, mark yourself honestly:
 - [x] Change file ownership with chown and chgrp
 - [x] Create and manage LVM volumes
 - [x] Check network connectivity — ping, curl, netstat, ss, dig, nslookup
-- [y] Explain DNS resolution, IP addressing, subnets, and common ports
+- [x] Explain DNS resolution, IP addressing, subnets, and common ports
 
 #### Shell Scripting
 - [x] Write a script with variables, arguments, and user input
@@ -68,9 +68,9 @@ Go through the checklist below. For each item, mark yourself honestly:
 ---
 
 ### Task 2: Revisit Your Weak Spots
-1. Pick **3 topics** from the checklist where you marked "Need to revisit"
-2. Go back to that day's challenge and redo the hands-on tasks
-3. Document what you re-learned in `day-28-notes.md`
+
+#### Revisited DNS resolution, IP addressing, subnets
+* Revisioned about DNS and subnests.
 
 ---
 
@@ -130,6 +130,13 @@ Answer these from memory (no Googling). Then verify your answers:
 ### Task 5: Teach It Back
 
 ## Topic
+* DNS resolution - 
+     When you search any domain(www.example.com) it searches in locally in cache for its ip address, If not present
+     then it sends a request to DNS requesting IP address. DNS send the ip address back, your system connects to
+     the domain using that ip address.
+* Subnets - 
+     Subnets are created using CIDR. Subnets are needed to divide large network into smaller, manageable network.
+     192.168.1.0/24 - This means we can use last 8 bits to create IP addresses, total would b 256.
 
 ---
 
