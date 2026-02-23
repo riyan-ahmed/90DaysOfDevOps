@@ -1,0 +1,9 @@
+FROM ubuntu:latest
+
+RUN apt update && apt install curl -y
+
+#CMD ["echo","Hello from my custom image!"]
+
+ENTRYPOINT ["echo","hi"]
+
+
