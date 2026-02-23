@@ -11,9 +11,9 @@
 
 **Verify:** The message prints on `docker run`
 
-    [Docker file](my-first-image/dockerfile)
+   [Docker file](my-first-image/dockerfile)
 
-    ![snapshot](images/hello.png)
+   ![snapshot](images/hello.png)
     
 ---
 
@@ -28,9 +28,9 @@ Create a new Dockerfile that uses **all** of these instructions:
 
 Build and run it. Understand what each line does.
 
-    [Docker file](java-hello-world-webapp/dockerfile)
+   [Docker file](java-hello-world-webapp/dockerfile)
 
-    ![snapshot](images/maven.png)
+   ![snapshot](images/maven.png)
     
 ---
 
