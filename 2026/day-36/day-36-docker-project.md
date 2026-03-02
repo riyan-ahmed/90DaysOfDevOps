@@ -81,13 +81,14 @@ https://hub.docker.com/repositories/afroz25
 
    * Frontend Dockerfile
 
-   [MERN-task-manager](https://github.com/Afroz-J-Shaikh/MERN-task-manager/blob/main/backend/Dockerfile)
+   [MERN-task-manager](https://github.com/Afroz-J-Shaikh/MERN-task-manager/blob/main/frontend/Dockerfile)
+
 
    * Backend Dockerfile
 
-   [MERN-task-manager](https://github.com/Afroz-J-Shaikh/MERN-task-manager/blob/main/frontend/Dockerfile)
+   [MERN-task-manager](https://github.com/Afroz-J-Shaikh/MERN-task-manager/blob/main/backend/Dockerfile)
 
-    * Docker Compose
+   * Docker Compose
 
    [MERN-task-manager](https://github.com/Afroz-J-Shaikh/MERN-task-manager/blob/main/docker-compose.yml)
 
