@@ -75,7 +75,7 @@
 | Command | Description |
 |------|----------|
 | `docker system prune` | removed unused networks, stopped containers, dangling images, unused build cache |
-| `docker system prune -a` | evrythin above + unused images |
+| `docker system prune -a` | evrything above + unused images |
 
 ### Dockerfile instructions
 
