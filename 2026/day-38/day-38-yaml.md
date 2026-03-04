@@ -19,6 +19,7 @@ Add to `person.yaml`:
 - `hobbies` — a list using the inline format `[item1, item2]`
 
 Write in your notes: What are the two ways to write a list in YAML?
+
 1 -
 ```sh
 tools:
@@ -110,7 +111,7 @@ tools:
 name: devops
 tools:
 - docker
-  - kubernetes
+  - kubernetes   # <-- wrong indentation
 ```
 * Indentation is wrong in the second block.
 ---
