@@ -1,0 +1,12 @@
+name: afroz
+role: learner
+experience_years: 0
+learning: true
+tools:
+  - linux
+  - shell scripting
+  - netwroking
+  - docker
+  - git & github
+  - github actions
+hobbies: [devops, cooking]

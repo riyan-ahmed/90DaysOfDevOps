@@ -1,0 +1,25 @@
+server:
+  name: ubuntu
+  ip:
+    - 127.0.0.1
+  ports:
+    - 80
+
+database:
+  host: mysql
+  name: mysql
+  credentials:
+    - user: root
+    - password: test@123
+
+startup_script: |
+  echo "starting ssh"
+  systemctl start ssh
+  systemctl status ssh
+  echo "finished script"
+
+description: >
+  This is the description to startup script.
+  It start ssh service.
+  Checks its status.
+  Script finished.
