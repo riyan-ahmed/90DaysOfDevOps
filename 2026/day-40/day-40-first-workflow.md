@@ -66,9 +66,9 @@ Update `hello.yml` to also:
 3. Fix it and push again
 
    *`"` Error
-   ![snapshot](images/4.png)
+   ![snapshot](images/5-a.png)
 
    *After solving error
-   ![snapshot](images/4.png)
+   ![snapshot](images/5-b.png)
 
 ---
