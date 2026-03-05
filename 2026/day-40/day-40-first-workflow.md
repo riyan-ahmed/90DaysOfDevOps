@@ -44,8 +44,8 @@ Look at your workflow file and write in your notes what each key does:
       workflows.
 - `run:` 
     - Executes a command or a script in the runner's shell.
-- `name:` 
-    - A description for workflow, jobs/steps.
+- `name:` (on steps)
+    - A description for steps.
 
 ---
 
