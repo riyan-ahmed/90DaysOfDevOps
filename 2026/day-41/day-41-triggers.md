@@ -13,11 +13,11 @@
 
    * After creating pull request
 
-   ![snapshot](images/1-a)
+   ![snapshot](images/1-a.png)
 
    * After updating pull request
 
-   ![snapshot](images/1-b)
+   ![snapshot](images/1-b.png)
 
 ---
 
