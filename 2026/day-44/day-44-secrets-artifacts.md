@@ -24,15 +24,15 @@ Write in your notes: Why should you never print secrets in CI logs?
 
    * Added docker username as environment variable
 
-   ![snapshot](images/2.png)
+   ![snapshot](images/2-a.png)
 
    * Added dockerhub token as environment variable
 
-   ![snapshot](images/2.png) 
+   ![snapshot](images/2-b.png) 
 
    [Using secrets yml file](https://github.com/Afroz-J-Shaikh/github-actions-practice/blob/f6de0423c804a35b23492c67cbd231a6763570b0/.github/workflows/using-secrets.yml)
 
-   ![snapshot](images/2.png)
+   ![snapshot](images/2-c.png)
 
 ---
 
