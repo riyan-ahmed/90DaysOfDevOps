@@ -5,7 +5,7 @@
 - I chose this app from GitHub, it doesn't have docker. 
 - I built dockerfiles and compose file from scratch.
 
-`https://github.com/aayush301/MERN-task-manager`
+[https://github.com/aayush301/MERN-task-manager](https://github.com/aayush301/MERN-task-manager)
 
 ---
 
