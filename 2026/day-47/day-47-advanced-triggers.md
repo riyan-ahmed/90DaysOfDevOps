@@ -54,31 +54,31 @@ Create `.github/workflows/pr-checks.yml` — a real-world PR gate:
    [pr validation yml](https://github.com/Afroz-J-Shaikh/github-actions-practice/blob/5858a404ce743a2fb7716a6d3962beb7d3a81619/.github/workflows/pr-checks.yml)
 
    ### File size check
-     * Valid
-      
-        ![snapshot](images/within-limit.png)
+   * Valid
+   
+      ![snapshot](images/within-limit.png)
 
-     * Invalid
+   * Invalid
 
-        ![snapshot](images/limit-exceed.png)
+      ![snapshot](images/limit-exceed.png)
 
    ### Branch name check
-     * Valid
-      
-        ![snapshot](images/branch-valid.png)
+   * Valid
+   
+      ![snapshot](images/branch-valid.png)
 
-     * Invalid
-     
-        ![snapshot](images/branch-invalid.png)
+   * Invalid
+   
+      ![snapshot](images/branch-invalid.png)
 
    ### PR body check
-     * Valid
-      
-        ![snapshot](images/description-valid.png)
+   * Valid
+   
+      ![snapshot](images/description-valid.png)
 
-     * Invalid
-     
-        ![snapshot](images/description.png)
+   * Invalid
+   
+      ![snapshot](images/description.png)
 
 ---
 
@@ -195,7 +195,7 @@ Create two workflows:
       "environment": "production"
    }
    }
-EOF
+   EOF
    ```
 
    ![snapshot](images/external.png)
