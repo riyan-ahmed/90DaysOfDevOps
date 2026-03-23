@@ -259,7 +259,7 @@ Only the built-in `kubernetes` service in the default namespace should remain.
 
 **Verify:** Is everything cleaned up?
 
-    ![snapshot](images/7.png)
+   ![snapshot](images/7.png)
 
 ---
 
@@ -280,7 +280,7 @@ Only the built-in `kubernetes` service in the default namespace should remain.
 ### Your three Service manifests with an explanation of each type
    * ClusterIP
 
-    ![snapshot](images/clusterip.png)
+   ![snapshot](images/clusterip.png)
 
      - Default service type.
      - Exposes pods inside cluster online.
@@ -289,7 +289,7 @@ Only the built-in `kubernetes` service in the default namespace should remain.
 
    * NodePrt IP
 
-    ![snapshot](images/nodeport.png)
+   ![snapshot](images/nodeport.png)
 
      - Exposes pods externally. Opens a port on evry node.
      - Provides access through <NodeIP>:<NodePort>  
@@ -298,7 +298,7 @@ Only the built-in `kubernetes` service in the default namespace should remain.
 
    * LoadBalancer
 
-    ![snapshot](images/loadbalancer.png)
+   ![snapshot](images/loadbalancer.png)
 
      - Creates an external load balancer (in cloud environments).
      - Exposes pods externally with single IP.
