@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: dynamic-pvc-pod
+spec:
+  containers:
+  - name: dynamic-pvc-pod
+    image: busybox:latest
+    command: ["/bin/sh","-c",'echo "TimeStamp : $(date)" >> /data/messages.txt; sleep 3000']
+    volumeMounts:
+    - name: data
+      mountPath: /data
+  volumes:
+    - name: data
+      persistentVolumeClaim:
+        claimName: dynamic-pvc
+
