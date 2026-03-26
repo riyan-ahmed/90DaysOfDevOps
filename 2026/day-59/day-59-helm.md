@@ -115,17 +115,6 @@ Same concept as Deployment rollouts from Day 52, but at the full stack level.
 
 ---
 
-## Hints
-- `helm show values <chart>` — see what you can customize
-- `--set key=value` for single overrides, `-f values.yaml` for files
-- Nested values use dots: `--set service.type=NodePort`
-- `helm get values <release>` shows overrides, `--all` for everything
-- `helm template` renders without installing — great for debugging
-- `helm lint` validates chart structure before installing
-- Templates: `{{ .Values.key }}`, `{{ .Chart.Name }}`, `{{ .Release.Name }}`
-
----
-
 - What Helm is and the three core concepts
    * Helm is the package manager for Kubernetes.It simplifies deploying, upgrading, and 
      managing applications by packaging Kubernetes manifests into reusable units.
@@ -165,10 +154,10 @@ Same concept as Deployment rollouts from Day 52, but at the full stack level.
    │   └── _helpers.tpl  # Helper template functions
    └── README.md         # Optional documentation
 ```
-     * Chart.yaml → Defines chart metadata.
-     * values.yaml → Holds default values that can be overridden at install/upgrade.
-     * templates/ → Contains Kubernetes manifests written with Go templating.
-     * _helpers.tpl → Stores reusable template snippets (like naming conventions).
+    * Chart.yaml → Defines chart metadata.
+    * values.yaml → Holds default values that can be overridden at install/upgrade.
+    * templates/ → Contains Kubernetes manifests written with Go templating.
+    * _helpers.tpl → Stores reusable template snippets (like naming conventions).
 
    * **Go templating**
      * Helm uses Go template engine to render manifests.
