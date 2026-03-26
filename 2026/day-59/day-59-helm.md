@@ -154,10 +154,10 @@ Same concept as Deployment rollouts from Day 52, but at the full stack level.
    │   └── _helpers.tpl  # Helper template functions
    └── README.md         # Optional documentation
 ```
-    * Chart.yaml → Defines chart metadata.
-    * values.yaml → Holds default values that can be overridden at install/upgrade.
-    * templates/ → Contains Kubernetes manifests written with Go templating.
-    * _helpers.tpl → Stores reusable template snippets (like naming conventions).
+   * Chart.yaml → Defines chart metadata.
+   * values.yaml → Holds default values that can be overridden at install/upgrade.
+   * templates/ → Contains Kubernetes manifests written with Go templating.
+   * _helpers.tpl → Stores reusable template snippets (like naming conventions).
 
    * **Go templating**
      * Helm uses Go template engine to render manifests.
