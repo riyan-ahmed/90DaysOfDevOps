@@ -287,6 +287,7 @@ This will take 10-15 minutes.
    ![snapshot](images/6-c.png)
 
 - Reflection: compare this to manually setting up a cluster with kind/minikube (Day 50)
+
 | manual(kind) | aws(eks) |
 |--------------|----------|
 | Manual SetUP | Automated(Iac) |
