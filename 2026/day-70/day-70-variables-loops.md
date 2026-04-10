@@ -397,8 +397,8 @@ Run it and verify the report file is created on each server.
 
    ![snapshot](images/db.png)
 
-   - **web serve**
-   
+   - **web server**
+
    ![snapshot](images/web.png)
 
 ---
