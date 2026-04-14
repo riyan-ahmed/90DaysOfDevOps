@@ -427,19 +427,15 @@ All 8 containers should be healthy and running.
 
 ```mermaid
 flowchart LR
-    subgraph METRICS["METRICS PIPELINE"]
-        NE["Node Exporter"]
-        CA["cAdvisor"]
-        OTEL_M["OTEL Collector:8889"]
-        PROM["Prometheus"]
-        GRAF_D["Grafana Dashboards"]
-        ALERT["Alert Rules → Notifications"]
+    subgraph TRACES["TRACES PIPELINE"]
+        APPS["curl / App OTLP"]
+        OTEL_T["OTEL Collector"]
+        DEBUG["Debug Output"]
+        FUTURE["Future: Jaeger/Tempo"]
         
-        NE --> PROM
-        CA --> PROM
-        OTEL_M --> PROM
-        PROM --> GRAF_D
-        PROM --> ALERT
+        APPS --> OTEL_T
+        OTEL_T --> DEBUG
+        OTEL_T -.-> FUTURE
     end
 
     subgraph LOGS["LOGS PIPELINE"]
@@ -453,15 +449,19 @@ flowchart LR
         LOKI --> GRAF_L
     end
 
-    subgraph TRACES["TRACES PIPELINE"]
-        APPS["curl / App OTLP"]
-        OTEL_T["OTEL Collector"]
-        DEBUG["Debug Output"]
-        FUTURE["Future: Jaeger/Tempo"]
+    subgraph METRICS["METRICS PIPELINE"]
+        NE["Node Exporter"]
+        CA["cAdvisor"]
+        OTEL_M["OTEL Collector:8889"]
+        PROM["Prometheus"]
+        GRAF_D["Grafana Dashboards"]
+        ALERT["Alert Rules → Notifications"]
         
-        APPS --> OTEL_T
-        OTEL_T --> DEBUG
-        OTEL_T -.-> FUTURE
+        NE --> PROM
+        CA --> PROM
+        OTEL_M --> PROM
+        PROM --> GRAF_D
+        PROM --> ALERT
     end
 ```
 
