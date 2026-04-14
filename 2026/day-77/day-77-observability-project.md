@@ -239,13 +239,13 @@ Compare `otel-collector/otel-collector-config.yml` from the reference repo with 
    - In `otel-collector-config.yml` verbosity was basic in `reference repo` changed it to
      `detailed` to get the above result.
    - In my day-76 config it was already set `verbosity: detailed`
-   ```yml
-  exporters:
+```yml
+exporters:
     prometheus:
-      endpoint: 0.0.0.0:8889
+    endpoint: 0.0.0.0:8889
     debug:
-      verbosity: detailed
-    ```
+    verbosity: detailed
+```
 ---
 
 ## Task 5: Build a Unified "Production Overview" Dashboard
