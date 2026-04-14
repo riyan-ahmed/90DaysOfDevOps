@@ -429,13 +429,13 @@ All 8 containers should be healthy and running.
 
 ```mermaid
 flowchart TB
-    subgraph METRICS["📈 METRICS PIPELINE"]
-        NE["🖥️ Node Exporter"]
-        CA["📦 cAdvisor"]
-        OTEL_M["🔍 OTEL Collector<br/>:8889"]
-        PROM["📊 Prometheus"]
-        GRAF_D["📉 Grafana Dashboards"]
-        ALERT["🚨 Alert Rules<br/>→ Notifications"]
+    subgraph METRICS["METRICS PIPELINE"]
+        NE["Node Exporter"]
+        CA["cAdvisor"]
+        OTEL_M["OTEL Collector<br/>:8889"]
+        PROM["Prometheus"]
+        GRAF_D["Grafana Dashboards"]
+        ALERT["Alert Rules<br/>→ Notifications"]
         
         NE --> PROM
         CA --> PROM
@@ -444,36 +444,28 @@ flowchart TB
         PROM --> ALERT
     end
 
-    subgraph LOGS["📝 LOGS PIPELINE"]
-        DOCKER["🐳 Docker Containers"]
-        PROMTAIL["📤 Promtail"]
-        LOKI["📚 Loki"]
-        GRAF_L["🔍 Grafana Explore/Dashboards"]
+    subgraph LOGS["LOGS PIPELINE"]
+        DOCKER["Docker Containers"]
+        PROMTAIL["Promtail"]
+        LOKI["Loki"]
+        GRAF_L["Grafana Explore/Dashboards"]
         
         DOCKER --> PROMTAIL
         PROMTAIL --> LOKI
         LOKI --> GRAF_L
     end
 
-    subgraph TRACES["🔬 TRACES PIPELINE"]
-        APPS["📡 curl / App OTLP"]
-        OTEL_T["🔄 OTEL Collector"]
-        DEBUG["🐛 Debug Output"]
-        FUTURE["🔮 Future: Jaeger/Tempo"]
+    subgraph TRACES["TRACES PIPELINE"]
+        APPS["curl / App OTLP"]
+        OTEL_T["OTEL Collector"]
+        DEBUG["Debug Output"]
+        FUTURE["Future: Jaeger/Tempo"]
         
         APPS --> OTEL_T
         OTEL_T --> DEBUG
         OTEL_T -.-> FUTURE
     end
 
-    style METRICS fill:#e3f2fd,stroke:#1976d2,stroke-width:2px
-    style LOGS fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
-    style TRACES fill:#e8f5e9,stroke:#388e3c,stroke-width:2px
-    style PROM fill:#ff6f00,stroke:#e65100,color:#fff
-    style LOKI fill:#7b1fa2,stroke:#4a148c,color:#fff
-    style OTEL_T fill:#00796b,stroke:#004d40,color:#fff
-    style GRAF_D fill:#f44336,stroke:#b71c1c,color:#fff
-    style GRAF_L fill:#f44336,stroke:#b71c1c,color:#fff
 ```
 
 ---
