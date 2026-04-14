@@ -423,19 +423,17 @@ All 8 containers should be healthy and running.
 
 ---
 
-- The full architecture diagram with all three pillars
+## The full architecture diagram with all three pillars
 
-## 🏗️ Architecture
-
-```mermaid
 flowchart TB
     subgraph METRICS["METRICS PIPELINE"]
+        direction LR
         NE["Node Exporter"]
         CA["cAdvisor"]
-        OTEL_M["OTEL Collector<br/>:8889"]
+        OTEL_M["OTEL Collector:8889"]
         PROM["Prometheus"]
         GRAF_D["Grafana Dashboards"]
-        ALERT["Alert Rules<br/>→ Notifications"]
+        ALERT["Alert Rules → Notifications"]
         
         NE --> PROM
         CA --> PROM
@@ -445,6 +443,7 @@ flowchart TB
     end
 
     subgraph LOGS["LOGS PIPELINE"]
+        direction LR
         DOCKER["Docker Containers"]
         PROMTAIL["Promtail"]
         LOKI["Loki"]
@@ -456,6 +455,7 @@ flowchart TB
     end
 
     subgraph TRACES["TRACES PIPELINE"]
+        direction LR
         APPS["curl / App OTLP"]
         OTEL_T["OTEL Collector"]
         DEBUG["Debug Output"]
@@ -465,7 +465,5 @@ flowchart TB
         OTEL_T --> DEBUG
         OTEL_T -.-> FUTURE
     end
-
-```
 
 ---
