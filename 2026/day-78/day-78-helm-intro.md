@@ -134,22 +134,22 @@ You should see `bankappdb` in the output.
 
 Create `mysql-values.yaml`:
 ```yaml
-  mysqlRootPassword: Test@123
-  mysqlDatabase: bankappdb
-  resources:
-    limits:
-      cpu: 500m
-      memory: 512Mi
-    requests:
-      cpu: 250m
-      memory: 256Mi
-  persistence:
-    size: 5Gi
-    storageClass: ""
-  metrics:
-    enabled: true
-    serviceMonitor:
-      enabled: false
+mysqlRootPassword: Test@123
+mysqlDatabase: bankappdb
+resources:
+  limits:
+    cpu: 500m
+    memory: 512Mi
+  requests:
+    cpu: 250m
+    memory: 256Mi
+persistence:
+  size: 5Gi
+  storageClass: ""
+metrics:
+  enabled: true
+  serviceMonitor:
+    enabled: false
 ```
 
 Deploy with the values file:
@@ -283,22 +283,22 @@ rm -rf mysql/
 - Your `mysql-values.yaml` and explanation of each field
 
 ```yml
-  mysqlRootPassword: Test@123    #Root user password for MySQL
-  mysqlDatabase: bankappdb       #Name of the initial database created at startup
-  resources:                     #Pod resource requests and limits
-    limits:                      #Container cannot exceed these
-      cpu: 500m
-      memory: 512Mi
-    requests:                    #Guaranteed minimum resources
-      cpu: 250m
-      memory: 256Mi
-  persistence:                   #PersistentVolumeClaim settings
-    size: 5Gi                    #Requested storage size
-    storageClass: ""             #Default storage class to use
-  metrics:                       #Separate metrics deployment
-    enabled: true                #Deploys bankapp-mysql-metrics Deployment
-    serviceMonitor:              #Optional integration with Prometheus Operator
-      enabled: false             #Disabled by default
+mysqlRootPassword: Test@123    #Root user password for MySQL
+mysqlDatabase: bankappdb       #Name of the initial database created at startup
+resources:                     #Pod resource requests and limits
+  limits:                      #Container cannot exceed these
+    cpu: 500m
+    memory: 512Mi
+  requests:                    #Guaranteed minimum resources
+    cpu: 250m
+    memory: 256Mi
+persistence:                   #PersistentVolumeClaim settings
+  size: 5Gi                    #Requested storage size
+  storageClass: ""             #Default storage class to use
+metrics:                       #Separate metrics deployment
+  enabled: true                #Deploys bankapp-mysql-metrics Deployment
+  serviceMonitor:              #Optional integration with Prometheus Operator
+    enabled: false             #Disabled by default
 ```
 
 - Why the AI-BankApp's 12 raw YAML files would benefit from being a Helm chart
