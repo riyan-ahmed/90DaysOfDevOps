@@ -467,15 +467,15 @@ This gives the `bankapp-developers` group permission to view and sync but NOT ro
 
 - Screenshot of ArgoCD UI during a sync wave deployment
 
-      ![snapshot](images/sync1.png)
-      ![snapshot](images/sync2.png)
+     ![snapshot](images/sync1.png)
+     ![snapshot](images/sync2.png)
 
 - App of Apps architecture diagram
 
-      ![snapshot](images/apps_of_app_diagram.png)
+     ![snapshot](images/apps_of_app_diagram.png)
 
 - Screenshot of ArgoCD showing multiple applications managed by the root app
 
-      ![snapshot](images/root.png)
+     ![snapshot](images/root.png)
 
 ---
