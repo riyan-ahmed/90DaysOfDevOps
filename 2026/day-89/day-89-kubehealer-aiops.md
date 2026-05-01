@@ -89,7 +89,7 @@ Changes included:
    - Fixing JSON extraction logic
    - Switching model from gemma2:9b to gemma4 due to runtime issues
 
-- Reffered [Afroz-J-Shaikh Kubehealer](https://github.com/Afroz-J-Shaikh/kubehealer/tree/main)
+- Reffer [Afroz-J-Shaikh Kubehealer](https://github.com/Afroz-J-Shaikh/kubehealer/tree/main)
 
 ---
 
@@ -313,6 +313,6 @@ deactivate
 
    ![snapshot](images/temporal.png)
    ![snapshot](images/workflow1.png)
-   ![snapshot](images/workflow1.png)
+   ![snapshot](images/workflow2.png)
 
 ---
