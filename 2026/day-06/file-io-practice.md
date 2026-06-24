@@ -2,40 +2,37 @@
 
 ## Commands Used
 
-touch notes.txt
-- Created an empty file.
-  <img width="391" height="25" alt="creating notes" src="https://github.com/user-attachments/assets/12ac1525-b6be-4698-9a27-e02f3a2a6394" />
+> touch notes.txt
 
+Create a textfile with name notes.txt
 
-echo "text" > notes.txt
-- Wrote text to the file.
-<img width="551" height="36" alt="png" src="https://github.com/user-attachments/assets/9ea8bf36-5f4b-4316-a06d-02cb3db1da26" />
+>echo "Hi, I am Riyan" > notes.txt
 
-echo "text" >> notes.txt
-- Appended text to the file.
-<img width="646" height="29" alt="png" src="https://github.com/user-attachments/assets/be22519c-529c-4bb7-bc08-2fe69664b946" />
+Write to notes.txt
 
+> echo "I am a devops enthusiast" >> notes.txt
 
-echo "text" | tee -a notes.txt
-- Displayed output and appended it to the file.
-  <img width="737" height="31" alt="tee" src="https://github.com/user-attachments/assets/549b3edb-d40a-4d5f-ab25-0968e38e97f5" />
+> echo "Today is day06 of learning linux" >> notes.txt
 
+Append to notes.txt
 
-cat notes.txt
-- Displayed the full file.
-<img width="408" height="192" alt="cat notes" src="https://github.com/user-attachments/assets/c40604ec-5d9b-4f4c-844d-43a38ea140d2" />
+> cat notes.txt
 
+> Read notes.txt
 
-head -n 3 notes.txt
-- Displayed the first 3 lines.
-<img width="390" height="91" alt="head" src="https://github.com/user-attachments/assets/5c4d6649-c457-4d4d-b5ea-632b1aa1b957" />
+> cat notes.txt | head -n 1
 
+Read first line of notes.txt
 
-tail -n 3 notes.txt
-- Displayed the last 3 lines.
-<img width="381" height="80" alt="tail" src="https://github.com/user-attachments/assets/8f9ff3c4-6d13-46e8-903b-3a3f3744aa78" />
+> cat notes.txt | tail -n 2
 
+Read last two lines of notes.txt
+
+> echo "Learn using tee command" | tee -a notes.txt
+
+Write using tee command that also prints the output to terminal -a appends
 
 ## Outcome
+<img width="645" height="279" alt="Screenshot 2026-06-24 at 11 08 42" src="https://github.com/user-attachments/assets/54140751-05eb-4174-a4f1-a41608773067" />
 
 Successfully created, modified, and read a text file using basic Linux commands.
