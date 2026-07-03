@@ -4,7 +4,7 @@ Step 1 : Launch an instance from AWS console.
 
 Step 2 : Connect to instance using ssh.
     
-Command : `ssh -i "batch10.pem" ubuntu@ec2-35-93-207-92.us-west-2.compute.amazonaws.com`
+Command : `ssh -i "linux-for-devops.pem" ubuntu@ec2-3-94-214-39.compute-1.amazonaws.com`
 
 Step 3 : Install Nginx
 
@@ -21,9 +21,9 @@ Command : `journalctl -u nginx`
 
 Step 5 : Save logs to file
 
-Commad : `scp -i "batch10.pem" ubuntu@ec2-35-93-207-92.us-west-2.compute.amazonaws.com:/var/log/nginx/access.log .`
+Commad : `scp -i "linux-for-devops.pem" ubuntu@ec2-3-94-214-39.compute-1.amazonaws.com:/var/log/nginx/access.log .`
     
-`scp -i "batch10.pem" ubuntu@ec2-35-93-207-92.us-west-2.compute.amazonaws.com:~/journalctl.log .`
+`scp -i "linux-for-devops.pem" ubuntu@ec2-3-94-214-39.compute-1.amazonaws.com:~/journalctl.log .`
     
 ## Install Docker
 
