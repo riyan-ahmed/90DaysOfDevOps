@@ -10,14 +10,15 @@ Today I created my first Kubernetes Pod using a YAML manifest.
 apiVersion: v1
 kind: Pod
 metadata:
-  name: nginx
+  name: nginx-pod
+  labels:
+    app: nginx
 spec:
   containers:
-  - name: nginx
-    image: nginx:1.14.2
-    ports:
-    - containerPort: 80
-~                     
+    - name: nginx
+      image: nginx:latest
+      ports:
+        - containerPort: 80
 ```
 
 ### Create the Pod
@@ -139,6 +140,38 @@ Pods are ephemeral resources. If a standalone Pod is deleted, Kubernetes does no
 
 ---
 
+---
+
+## Task 5: Access the Application Using Port Forwarding
+
+To verify that the application was running correctly inside the Pod, I used Kubernetes port forwarding to access it from my local machine.
+
+### Port Forward the Pod
+
+```bash
+kubectl port-forward pod/nginx 8080:80
+```
+
+Then I opened the following URL in my browser:
+
+```text
+http://localhost:8080
+```
+
+The default Nginx welcome page loaded successfully, confirming that:
+
+- The Pod was running successfully.
+- The Nginx container was serving HTTP traffic.
+- The application was accessible through Kubernetes port forwarding.
+
+### Screenshot
+
+![Nginx Welcome Page](./images/nginx-welcome-page.png)
+
+## Key Learning
+
+`kubectl port-forward` creates a temporary connection between my local machine and a Pod running inside the Kubernetes cluster. It allows me to test applications locally without exposing them through a Kubernetes Service.
+
 ## Summary
 
 Today I learned how to:
@@ -156,3 +189,6 @@ Today I learned how to:
 ![Nginx Pod Logs](./images/nginx-pod-logs.png)
 
 ![Recreated Nginx Pod](./images/nginx-pod-recreated.png)
+
+
+
