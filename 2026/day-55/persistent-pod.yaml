@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: persistent-demo-pod
+  namespace: default
+spec:
+  nodeName: tws-cluster-worker
+
+  containers:
+    - name: busybox
+      image: busybox:1.36
+      command:
+        - /bin/sh
+        - -c
+      args:
+        - |
+          echo "Written by $(hostname) at $(date)" >> /data/message.txt
+          sleep 3600
+      volumeMounts:
+        - name: persistent-storage
+          mountPath: /data
+
+  volumes:
+    - name: persistent-storage
+      persistentVolumeClaim:
+        claimName: manual-pvc
