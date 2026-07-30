@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: day56-nginx-statefulset
+  namespace: default
+spec:
+  serviceName: day56-nginx-headless
+  replicas: 3
+
+  selector:
+    matchLabels:
+      app: day56-stateful-nginx
+
+  template:
+    metadata:
+      labels:
+        app: day56-stateful-nginx
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.27-alpine
+          command:
+            - /bin/sh
+            - -c
+          args:
+            - |
+              echo "<h1>Pod: $(hostname)</h1>" > /usr/share/nginx/html/index.html
+              echo "Created by $(hostname) at $(date -u)" >> /data/identity.txt
+              exec nginx -g 'daemon off;'
+          ports:
+            - name: http
+              containerPort: 80
+          volumeMounts:
+            - name: data
+              mountPath: /data
+
+  volumeClaimTemplates:
+    - metadata:
+        name: data
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        storageClassName: standard
+        resources:
+          requests:
+            storage: 200Mi

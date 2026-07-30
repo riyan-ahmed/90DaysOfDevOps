@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: day56-nginx-deployment
+  namespace: default
+spec:
+  replicas: 3
+
+  selector:
+    matchLabels:
+      app: day56-nginx
+
+  template:
+    metadata:
+      labels:
+        app: day56-nginx
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.27-alpine
+          ports:
+            - name: http
+              containerPort: 80
