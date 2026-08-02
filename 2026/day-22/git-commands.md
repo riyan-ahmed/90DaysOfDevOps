@@ -73,3 +73,46 @@ Removes a file from the staging area without deleting its changes.
 
 Example: `git restore --staged git-commands.md`
 
+## Branching
+
+### `git branch`
+Lists local branches.
+
+Example: `git branch`
+
+### `git branch <branch-name>`
+Creates a new branch without switching to it.
+
+Example: `git branch feature-1`
+
+### `git switch <branch-name>`
+Switches to an existing branch.
+
+Example: `git switch feature-1`
+
+### `git switch -c <branch-name>`
+Creates a new branch and switches to it.
+
+Example: `git switch -c feature-2`
+
+### `git branch -d <branch-name>`
+Safely deletes a local branch.
+
+Example: `git branch -d feature-2`
+
+### `git branch -a`
+Lists local and remote branches.
+
+Example: `git branch -a`
+
+## Remote Repositories
+
+### `git remote -v`
+Shows the configured remote names and addresses.
+
+Example: `git remote -v`
+
+### `git push -u origin <branch-name>`
+Pushes a branch to GitHub and connects the local branch to it.
+
+Example: `git push -u origin feature-1`
