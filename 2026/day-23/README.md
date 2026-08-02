@@ -84,6 +84,8 @@ In your `devops-git-practice` repo, perform the following:
 
 Share your branching workflow and first GitHub push on LinkedIn.
 
+> Remote update test: This line was added using the GitHub editor.
+
 `#90DaysOfDevOps` `#DevOpsKaJosh` `#TrainWithShubham`
 
 Happy Learning!
