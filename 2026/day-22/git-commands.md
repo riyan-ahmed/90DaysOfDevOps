@@ -116,3 +116,33 @@ Example: `git remote -v`
 Pushes a branch to GitHub and connects the local branch to it.
 
 Example: `git push -u origin feature-1`
+
+### `git fetch`
+Downloads remote commits and branch information without modifying local files.
+
+Example: `git fetch origin`
+
+### `git pull`
+Downloads and integrates remote changes into the current branch.
+
+Example: `git pull origin master`
+
+### `git clone`
+Creates a local copy of a remote repository.
+
+Example: `git clone https://github.com/owner/repository.git`
+
+### `git remote add`
+Adds another remote repository address.
+
+Example: `git remote add upstream https://github.com/TrainWithShubham/90DaysOfDevOps.git`
+
+### `git fetch upstream`
+Downloads updates from the original repository connected as upstream.
+
+Example: `git fetch upstream`
+
+### `git merge upstream/master`
+Integrates the fetched upstream master branch into the current branch.
+
+Example: `git merge upstream/master`
