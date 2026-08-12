@@ -1,0 +1,19 @@
+---
+name: Riyan Ahmed
+role: DevOps and Cloud Engineer
+experience_years: 1.5
+learning: true
+
+tools:
+  - Linux
+  - Git
+  - Docker
+  - Kubernetes
+  - AWS
+
+hobbies: [gym, travelling, learning]
+
+contact:
+  email: riyanahmed.a1@gmail.com
+  location: United Kingdom
+  linkedin: riyan-ahmed-devops
