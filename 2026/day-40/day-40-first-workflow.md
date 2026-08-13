@@ -1,9 +1,5 @@
 # Day 40 – My First GitHub Actions Workflow
 
-Today I created and ran my first GitHub Actions workflow.
-
-## Workflow
-
 ```yaml
 name: Hello
 
@@ -32,6 +28,7 @@ jobs:
 
       - name: Print runner OS
         run: 'echo "Runner OS: ${{ runner.os }}"'
+```
 
 ## Successful Workflow Run
 
