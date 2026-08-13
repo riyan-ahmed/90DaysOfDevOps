@@ -33,6 +33,6 @@ jobs:
       - name: Print runner OS
         run: 'echo "Runner OS: ${{ runner.os }}"'
 
-## Successful Workflow Run
+## My Successful Workflow Run
 
 ![Successful GitHub Actions workflow](images/day-40-workflow-green.png)
