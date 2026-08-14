@@ -32,6 +32,7 @@ jobs:
 
       - name: Print runner OS
         run: 'echo "Runner OS: ${{ runner.os }}"'
+```
 
 ## My Successful Workflow Run
 
