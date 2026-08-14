@@ -1,0 +1,18 @@
+---
+server:
+  name: web-server
+  ip: 192.168.1.10
+  port: 8080
+
+database:
+  host: localhost
+  name: devopsdb
+  credentials:
+    user: admin
+    password: password123
+
+
+startup_script: |
+  echo "Starting server"
+  sudo apt update
+  echo "Server ready"
