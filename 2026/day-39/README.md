@@ -119,9 +119,9 @@ Developer Pushes Code
 ### My Hand-Drawn Pipeline
 
 I first mapped the pipeline by hand to understand how a code push moves through testing, building, and deployment.
-
+``
 ![Hand-drawn CI/CD pipeline](images/day-39-pipeline-diagram.jpeg)
-
+``
 ---
 
 ## Exploring a Real GitHub Actions Workflow
