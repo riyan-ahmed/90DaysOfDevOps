@@ -610,4 +610,16 @@ Container
 Application
 ```
 
+## Successful Docker Publish
+
+![Successful Docker Publish workflow](images/day-45-docker-publish-green.png)
+
+## Docker Hub Image Tags
+
+![Docker Hub image tags](images/day-45-dockerhub-tags.png)
+
+## Running Container
+
+![Container health check](images/day-45-container-health.png)
+
 GitHub Actions is therefore not just running tests after a push. It can automate the process of turning source code into a versioned Docker image that is ready to be deployed.
