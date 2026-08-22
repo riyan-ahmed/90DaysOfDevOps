@@ -716,5 +716,13 @@ Return Outputs
     ↓
 Reuse Anywhere
 ```
+## Successful Reusable Workflow
+
+![Reusable workflow run](images/day-46-reusable-workflow.png)
+
+## Successful Composite Action
+
+![Composite action run](images/day-46-composite-action.png)
+
 
 This makes larger GitHub Actions pipelines much easier to maintain.
