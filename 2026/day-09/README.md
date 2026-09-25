@@ -1,150 +1,287 @@
-# Day 09 – Linux User & Group Management Challenge
+# Day 09 – Linux User and Group Management
 
-## Task
-Today's goal is to **practice user and group management** by completing hands-on challenges.
+## Overview
 
-Figure out how to:
-- Create users and set passwords
-- Create groups and assign users
-- Set up shared directories with group permissions
+Today I practised Linux user and group management by creating multiple users, assigning them to different groups, configuring shared directories, and testing permissions between users.
 
-Use what you learned from Days 1-7 to find the right commands!
+This helped me understand how Linux controls access using users, groups, ownership, and file permissions.
 
 ---
 
-## Expected Output
-- A markdown file: `day-09-user-management.md`
-- Screenshots of command outputs
-- List of commands used
+## Tasks Completed
+
+### 1. Created Users
+
+Created three Linux users:
+
+```bash
+sudo useradd -m tokyo
+sudo useradd -m berlin
+sudo useradd -m professor
+```
+
+Set passwords:
+
+```bash
+sudo passwd tokyo
+sudo passwd berlin
+sudo passwd professor
+```
+
+Verified the users:
+
+```bash
+grep -E 'tokyo|berlin|professor' /etc/passwd
+```
+
+Checked their home directories:
+
+```bash
+ls -l /home/
+```
 
 ---
 
-## Challenge Tasks
+## 2. Created Groups
 
-### Task 1: Create Users (20 minutes)
+Created two groups:
 
-Create three users with home directories and passwords:
-- `tokyo`
-- `berlin`
-- `professor`
+```bash
+sudo groupadd heist
+sudo groupadd police
+```
 
-**Verify:** Check `/etc/passwd` and `/home/` directory
+Verified them:
 
----
-
-### Task 2: Create Groups (10 minutes)
-
-Create two groups:
-- `developers`
-- `admins`
-
-**Verify:** Check `/etc/group`
+```bash
+grep -E 'heist|police' /etc/group
+```
 
 ---
 
-### Task 3: Assign to Groups (15 minutes)
+## 3. Assigned Users to Groups
 
-Assign users:
-- `tokyo` → `developers`
-- `berlin` → `developers` + `admins` (both groups)
-- `professor` → `admins`
+Added Tokyo and Berlin to the `heist` group:
 
-**Verify:** Use appropriate command to check group membership
+```bash
+sudo usermod -aG heist tokyo
+sudo usermod -aG heist berlin
+```
 
----
+Added Professor to the `police` group:
 
-### Task 4: Shared Directory (20 minutes)
+```bash
+sudo usermod -aG police professor
+```
 
-1. Create directory: `/opt/dev-project`
-2. Set group owner to `developers`
-3. Set permissions to `775` (rwxrwxr-x)
-4. Test by creating files as `tokyo` and `berlin`
+Verified memberships:
 
-**Verify:** Check permissions and test file creation
-
----
-
-### Task 5: Team Workspace (20 minutes)
-
-1. Create user `nairobi` with home directory
-2. Create group `project-team`
-3. Add `nairobi` and `tokyo` to `project-team`
-4. Create `/opt/team-workspace` directory
-5. Set group to `project-team`, permissions to `775`
-6. Test by creating file as `nairobi`
+```bash
+groups tokyo
+groups berlin
+groups professor
+```
 
 ---
 
-## Hints
+## 4. Created Shared Directories
 
-**Stuck? Try these commands:**
-- User: `useradd`, `passwd`, `usermod`
-- Group: `groupadd`, `groups`
-- Permissions: `chgrp`, `chmod`
-- Test: `sudo -u username command`
+Created shared directories for both groups:
 
-**Tip:** Use `-m` flag with useradd for home directory, `-aG` for adding to groups
+```bash
+sudo mkdir -p /shared/heist
+sudo mkdir -p /shared/police
+```
+
+Assigned group ownership:
+
+```bash
+sudo chown :heist /shared/heist
+sudo chown :police /shared/police
+```
+
+Applied permissions:
+
+```bash
+sudo chmod 2770 /shared/heist
+sudo chmod 2770 /shared/police
+```
+
+Verified:
+
+```bash
+ls -ld /shared/heist /shared/police
+```
+
+The `2` in `2770` enables the **setgid bit**, meaning files created inside the directory inherit the directory's group.
 
 ---
 
-## Documentation
+## 5. Tested Tokyo Access
 
-Create `day-09-user-management.md`:
+Switched to Tokyo:
 
-```markdown
-# Day 09 Challenge
+```bash
+su - tokyo
+```
 
-## Users & Groups Created
-- Users: tokyo, berlin, professor, nairobi
-- Groups: developers, admins, project-team
+Created a file inside the Heist directory:
 
-## Group Assignments
-[List who is in which groups]
+```bash
+echo "Tokyo was here" > /shared/heist/tokyo.txt
+```
 
-## Directories Created
-[List directories with permissions]
+Verified:
 
-## Commands Used
-[Your commands here]
+```bash
+ls -l /shared/heist
+cat /shared/heist/tokyo.txt
+```
+
+Tested access to the Police directory:
+
+```bash
+touch /shared/police/test.txt
+```
+
+Result:
+
+```text
+Permission denied
+```
+
+This confirmed that Tokyo could access the `heist` directory but not the `police` directory.
+
+---
+
+## 6. Tested Berlin Access
+
+Switched to Berlin:
+
+```bash
+su - berlin
+```
+
+Created a file:
+
+```bash
+echo "Berlin was here" > /shared/heist/berlin.txt
+```
+
+Verified:
+
+```bash
+ls -l /shared/heist
+```
+
+Tested Police directory access:
+
+```bash
+touch /shared/police/berlin-test.txt
+```
+
+Result:
+
+```text
+Permission denied
+```
+
+Berlin could access the `heist` directory but was blocked from the `police` directory.
+
+---
+
+## 7. Tested Professor Access
+
+Switched to Professor:
+
+```bash
+su - professor
+```
+
+Created a file:
+
+```bash
+echo "Professor was here" > /shared/police/professor.txt
+```
+
+Verified:
+
+```bash
+ls -l /shared/police
+cat /shared/police/professor.txt
+```
+
+Tested Heist directory access:
+
+```bash
+touch /shared/heist/professor-test.txt
+```
+
+Result:
+
+```text
+Permission denied
+```
+
+Professor could access the `police` directory but not the `heist` directory.
+
+---
+
+## Final Verification
+
+```bash
+id tokyo
+id berlin
+id professor
+
+ls -ld /shared/heist /shared/police
+ls -l /shared/heist
+ls -l /shared/police
+```
+
+---
+
+## Key Commands Learned
+
+```bash
+useradd
+passwd
+groupadd
+usermod
+groups
+id
+chown
+chmod
+mkdir
+su
+```
+
+---
+
+## Key Concepts Learned
+
+- Linux user management
+- Linux group management
+- Primary and supplementary groups
+- File and directory ownership
+- Group-based access control
+- Linux permission bits
+- `chmod`
+- `chown`
+- `setgid`
+- Shared directories
+- Access permission testing
+
+---
 
 ## What I Learned
-[3 key points]
-```
 
----
+The biggest takeaway from Day 09 was understanding that Linux permissions are not just about `read`, `write`, and `execute`.
 
+By combining users, groups, ownership, permissions, and `setgid`, I can create controlled shared environments where users can collaborate while preventing unauthorised access to other directories.
 
-## Troubleshooting
+This is particularly important in Linux administration, cloud environments, DevOps systems, and production servers.
 
-**Permission denied?** Use `sudo`
+## Day 09 Complete ✅
 
-**User can't access directory?**
-- Check group: `groups username`
-- Check permissions: `ls -ld /path`
-
----
-
-## Submission
-1. Fork this `90DaysOfDevOps` repository
-2. Navigate to `2026/day-09/` folder
-3. Add your `day-09-user-management.md` with screenshots
-4. Commit and push
-
----
-
-## Learn in Public
-Share your Day 09 progress on LinkedIn:
-
-- Post about completing the user management challenge
-- Share one thing you figured out
-- Mention real-world DevOps use
-
-Use hashtags:
-```
-#90DaysOfDevOps
-#DevOpsKaJosh
-#TrainWithShubham
-```
-
-Happy Learning
-**TrainWithShubham**
+Successfully completed Linux User & Group Management as part of my **90 Days of DevOps** journey.
